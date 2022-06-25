@@ -1,8 +1,5 @@
-// ignore: duplicate_ignore
-// ignore: duplicate_ignores
-// ignore: file_names
-// ignore_for_file: file_names, prefer_const_constructors, duplicate_ignore
-// ignore: unnecessary_import
+// ignore_for_file: unnecessary_import, file_names
+
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
@@ -20,7 +17,6 @@ class _MyHomePageState extends State<MyCalculator> {
   final myController1 = TextEditingController();
   final myController2 = TextEditingController();
   int hasil = 0, text1 = 0, text2 = 0;
-  // ignore: unused_element
   void proses() {
     setState(() {
       text1 = int.tryParse(myController1.text);
@@ -74,17 +70,17 @@ class _MyHomePageState extends State<MyCalculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Kalkulator"),
+        title: const Text("Kalkulator"),
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
                 "Hasil : $hasil",
-                style: TextStyle(fontSize: 20.0),
+                style: const TextStyle(fontSize: 20.0),
               ),
               const SizedBox(height: 20.0),
               TextFormField(
