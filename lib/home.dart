@@ -1,11 +1,9 @@
-// ignore: unused_import
-// ignore: unused_import
-// ignore_for_file: unnecessary_const, avoid_unnecessary_containers
+// ignore_for_file: unused_import, avoid_unnecessary_containers
 
+import 'package:aplikasi_saya/calender.dart';
 import 'package:flutter/material.dart';
-import 'Calculator.dart';
-// ignore: unused_import
-import 'luas.dart';
+import 'package:aplikasi_saya/Calculator.dart';
+import 'package:aplikasi_saya/luas.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -14,62 +12,224 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("HOME")),
+        elevation: 0,
+        title: const Text("HITUNG"),
+        backgroundColor: const Color.fromARGB(255, 60, 134, 219),
       ),
-      body: SafeArea(
-        child: Column(children: <Widget>[
-          // ignore: avoid_unnecessary_containers
-          Container(
-            height: 210,
-            width: 450,
-            margin: const EdgeInsets.all(10),
-            child: Card(
-              color: const Color.fromARGB(255, 60, 134, 219),
-              elevation: 5,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  const Text("WALCOME TO  Aplikasi Hitung",
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: Color.fromARGB(255, 222, 234, 235),
-                        fontWeight: FontWeight.bold,
-                      )),
-                  const Text("Suport By hafittekno.com",
-                      style: TextStyle(
-                          fontSize: 12.0,
-                          color: Color.fromARGB(255, 222, 234, 235),
-                          fontWeight: FontWeight.bold)),
-                ],
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+          Color.fromARGB(255, 104, 169, 245),
+          Color.fromARGB(255, 27, 125, 238)
+        ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+        child: SafeArea(
+          child: Column(children: <Widget>[
+            //baris pertama
+            Container(
+              width: 450,
+              padding: const EdgeInsets.all(13),
+              child: Card(
+                color: const Color.fromARGB(255, 60, 134, 219),
+                elevation: 5,
+                child: Column(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    const SizedBox(height: 10.0),
+                    const Image(
+                      image: AssetImage('images/new.png'),
+                      fit: BoxFit.contain,
+                      repeat: ImageRepeat.repeat,
+                      width: 350,
+                    ),
+                    const Padding(padding: EdgeInsets.all(12)),
+                    const SizedBox(height: 5.0),
+                    const Text("WALCOME TO  Aplikasi Hitung",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontWeight: FontWeight.bold,
+                        )),
+                    const SizedBox(height: 5.0),
+                    const Text("Solusi Belajar Berhitung",
+                        style: TextStyle(
+                            fontSize: 15.0,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 15.0),
+                  ],
+                ),
               ),
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Container(child: const Card(child: const Text("KALKULATOR"))),
-              // Container(child: const Card(child: const Text("LUAS")))
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const MyCalculator();
-                    }));
-                  },
-                  child: const Text("KALKULATOR")),
-              const SizedBox(width: 20.0),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const MayLuas();
-                    }));
-                  },
-                  child: const Text("LUAS"))
-            ],
-          )
-        ]),
+            //baris dua
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 170,
+                  width: 165,
+                  margin: const EdgeInsets.all(10),
+                  child: Card(
+                      color: const Color.fromARGB(255, 60, 134, 219),
+                      elevation: 5,
+                      child: InkWell(
+                        hoverColor: const Color.fromARGB(255, 253, 252, 252),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const MyCalculator();
+                          }));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.calculate,
+                              size: 70,
+                              color: Color.fromARGB(255, 250, 251, 252),
+                            ),
+                            const Text("Kalkulator",
+                                style: TextStyle(
+                                  fontSize: 15.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ],
+                        ),
+                      )),
+                ),
+                Container(
+                    height: 170,
+                    width: 165,
+                    margin: const EdgeInsets.all(10),
+                    child: Card(
+                      elevation: 5,
+                      color: const Color.fromARGB(255, 60, 134, 219),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const MayLuas();
+                          }));
+                        },
+                        hoverColor: const Color.fromARGB(255, 245, 242, 244),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.donut_large,
+                              size: 70,
+                              color: Color.fromARGB(255, 248, 249, 250),
+                            ),
+                            const Text("Luas",
+                                style: TextStyle(
+                                  fontSize: 15.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ],
+                        ),
+                      ),
+                    )),
+              ],
+            ),
+            //baris tiga
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 170,
+                  width: 165,
+                  margin: const EdgeInsets.all(10),
+                  child: Card(
+                      color: const Color.fromARGB(255, 60, 134, 219),
+                      elevation: 5,
+                      child: InkWell(
+                        hoverColor: const Color.fromARGB(255, 253, 252, 252),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const MayKalender();
+                          }));
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.calendar_month,
+                              size: 70,
+                              color: Color.fromARGB(255, 250, 251, 252),
+                            ),
+                            const Text("Kalender",
+                                style: TextStyle(
+                                  fontSize: 15.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ],
+                        ),
+                      )),
+                ),
+                Container(
+                    height: 170,
+                    width: 165,
+                    margin: const EdgeInsets.all(10),
+                    child: Card(
+                      elevation: 5,
+                      color: const Color.fromARGB(255, 60, 134, 219),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const MayLuas();
+                          }));
+                        },
+                        hoverColor: const Color.fromARGB(255, 245, 242, 244),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.info,
+                              size: 70,
+                              color: Color.fromARGB(255, 248, 249, 250),
+                            ),
+                            const Text("Info Aplikasi",
+                                style: TextStyle(
+                                  fontSize: 15.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ],
+                        ),
+                      ),
+                    )),
+              ],
+            ),
+            Container(
+              height: 80,
+              width: 500,
+              padding: const EdgeInsets.all(20),
+              child: Card(
+                color: const Color.fromARGB(255, 60, 134, 219),
+                elevation: 5,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    const Text("Suport By hafittekno.com",
+                        style: TextStyle(
+                            fontSize: 15.0,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontWeight: FontWeight.bold)),
+                  ],
+                ),
+              ),
+            ),
+          ]),
+        ),
       ),
     );
   }
