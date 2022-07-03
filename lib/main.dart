@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'home.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  initializeDateFormatting().then((_) => runApp(const MyApp()));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
