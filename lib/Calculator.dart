@@ -72,69 +72,75 @@ class _MyHomePageState extends State<MyCalculator> {
       appBar: AppBar(
         title: const Text("Kalkulator"),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "Hasil : $hasil",
-                style: const TextStyle(fontSize: 20.0),
-              ),
-              const SizedBox(height: 20.0),
-              TextFormField(
-                  controller: myController1,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    contentPadding: EdgeInsets.all(20.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0))),
-                    labelText: 'ANGGKA 1',
-                    labelStyle: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.0),
-                  )),
-              const SizedBox(height: 10.0),
-              TextFormField(
-                  controller: myController2,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    contentPadding: EdgeInsets.all(20.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0))),
-                    labelText: 'ANGGKA 2',
-                    labelStyle: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.0),
-                  )),
-              const SizedBox(height: 10.0),
+      body: SingleChildScrollView(
+        reverse: true,
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "Hasil : $hasil",
+                  style: const TextStyle(fontSize: 20.0),
+                ),
+                const SizedBox(height: 20.0),
+                TextFormField(
+                    controller: myController1,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.all(20.0),
+                      border: OutlineInputBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(15.0))),
+                      labelText: 'ANGGKA 1',
+                      labelStyle: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14.0),
+                    )),
+                const SizedBox(height: 10.0),
+                TextFormField(
+                    controller: myController2,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.all(20.0),
+                      border: OutlineInputBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(15.0))),
+                      labelText: 'ANGGKA 2',
+                      labelStyle: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14.0),
+                    )),
+                const SizedBox(height: 10.0),
 
-              //Tombol
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(onPressed: proses, child: const Text("+")),
-                  const SizedBox(width: 10.0),
-                  ElevatedButton(onPressed: kurang, child: const Text("-")),
-                ],
-              ),
+                //Tombol
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(onPressed: proses, child: const Text("+")),
+                    const SizedBox(width: 10.0),
+                    ElevatedButton(onPressed: kurang, child: const Text("-")),
+                  ],
+                ),
 
-              const SizedBox(height: 0.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(onPressed: bagi, child: const Text("/")),
-                  const SizedBox(width: 10.0),
-                  ElevatedButton(onPressed: kali, child: const Text("*")),
-                  const SizedBox(width: 5.0),
-                  ElevatedButton(onPressed: proses2, child: const Text("Reset"))
-                ],
-              ),
-              //Tombol
-            ],
+                const SizedBox(height: 0.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(onPressed: bagi, child: const Text("/")),
+                    const SizedBox(width: 10.0),
+                    ElevatedButton(onPressed: kali, child: const Text("*")),
+                    const SizedBox(width: 5.0),
+                    ElevatedButton(
+                        onPressed: proses2, child: const Text("Reset"))
+                  ],
+                ),
+                //Tombol
+              ],
+            ),
           ),
         ),
       ),

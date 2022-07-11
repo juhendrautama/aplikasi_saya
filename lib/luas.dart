@@ -44,64 +44,69 @@ class _MyHomePageState extends State<MayLuas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("LUAS"),
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(40.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "Hasil : $hasil",
-                style: TextStyle(fontSize: 20.0),
-              ),
-              const SizedBox(height: 20.0),
-              TextFormField(
-                  controller: myController1,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    contentPadding: EdgeInsets.all(20.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0))),
-                    labelText: 'Panjang',
-                    labelStyle: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.0),
-                  )),
-              const SizedBox(height: 20.0),
-              TextFormField(
-                  controller: myController2,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    contentPadding: EdgeInsets.all(20.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(15.0))),
-                    labelText: 'Lebar',
-                    labelStyle: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.0),
-                  )),
-              const SizedBox(height: 20.0),
-              //Tombol
-              Row(
+        appBar: AppBar(
+          title: Text("LUAS"),
+        ),
+        body: SingleChildScrollView(
+          reverse: true,
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.all(40.0),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                      onPressed: proses, child: const Text("PROSES")),
-                  const SizedBox(width: 10.0),
-                  ElevatedButton(onPressed: reset, child: const Text("RESET")),
+                children: <Widget>[
+                  Text(
+                    "Hasil : $hasil",
+                    style: TextStyle(fontSize: 20.0),
+                  ),
+                  const SizedBox(height: 20.0),
+                  TextFormField(
+                      controller: myController1,
+                      keyboardType: TextInputType.number,
+                      decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.all(20.0),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
+                        labelText: 'Panjang',
+                        labelStyle: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14.0),
+                      )),
+                  const SizedBox(height: 20.0),
+                  TextFormField(
+                      controller: myController2,
+                      keyboardType: TextInputType.number,
+                      decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.all(20.0),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
+                        labelText: 'Lebar',
+                        labelStyle: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14.0),
+                      )),
+                  const SizedBox(height: 20.0),
+                  //Tombol
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                          onPressed: proses, child: const Text("PROSES")),
+                      const SizedBox(width: 10.0),
+                      ElevatedButton(
+                          onPressed: reset, child: const Text("RESET")),
+                    ],
+                  ),
+
+                  //Tombol
                 ],
               ),
-
-              //Tombol
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
